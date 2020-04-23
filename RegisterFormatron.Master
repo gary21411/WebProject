@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="RegisterFormatron.master.cs" Inherits="WebProj.RegisterFormatron" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="RegiStyler1.css" rel="stylesheet" />
+    <style>
+    .button {
+        border: inherit;
+        background: inherit;
+        padding: 6px 12px;
+        font-size: 16px;
+        display: inline-block;
+        border-radius: 5px;
+
+    }
+
+    .UserInfo {
+        border: 2px solid red;
+        color: white;
+        background: red;
+    }
+        .UserInfo:hover{
+            color:red;
+            border: 2px solid red;
+            background: white;
+        }
+
+    .Menu {
+        border: 2px solid blue;
+        color: white;
+        background: blue;
+    }
+           .Menu:hover{
+            color:blue;
+            border: 2px solid blue;
+            background: white;
+        }     
+
+    </style>
+    <script src="RegisterTests.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <select class="button Menu" onchange="location = this.options[this.selectedIndex].value;">
+        <option>Menu</option>
+        <option value="Home.aspx">Home</option>
+        <option value="RegistrationPage.aspx">Sign up</option>
+        <option value="LoginPage.aspx">Log in</option>
+        <option value="AllUsersData.aspx">All Users</option>
+        <option value="DelUserPage.aspx">Delete</option>
+        <option value="UpdateInfoPage.aspx"> Update</option>
+        <option value="SetGame.aspx"> Set-Game</option>
+    </select>
+    <button id="UserInfo" class="button UserInfo" onclick="location = 'UserInfoPage.aspx'"><%=Status %></button>
+    <div id="RegisterationDiv" style="overflow-x:auto;">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</body>
+</html>

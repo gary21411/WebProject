@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TheList>
+  <CD>
+    <UserName>Noam2406</UserName>
+    <Mail>rn.noam@gmail.com</Mail>
+    <FirstName>נועם</FirstName>
+    <LastName>רונן</LastName>
+    <PassWord>nom9nom9</PassWord>
+    <Birthdate>24/06/2004</Birthdate>
+    <age>15</age>
+    <MobileNumber>0584407876</MobileNumber>
+    <Gender>Boy</Gender>
+    <Address>אלוף דוד 155</Address>
+    <Admin>True</Admin>
+  </CD>
+</TheList>
