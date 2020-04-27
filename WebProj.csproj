@@ -75,10 +75,36 @@
     </Content>
     <Content Include="AfterRegistering.aspx" />
     <Content Include="DelUserPage.aspx" />
+    <Content Include="DkGamePhotos\Barral24X29.png" />
+    <Content Include="DkGamePhotos\Dk1.png" />
+    <Content Include="DkGamePhotos\Dk2.png" />
+    <Content Include="DkGamePhotos\Dk3.png" />
+    <Content Include="DkGamePhotos\DkSpriteSheet.png" />
+    <Content Include="DkGamePhotos\dude.png" />
+    <Content Include="DkGamePhotos\firstStagefinal.jpg" />
+    <Content Include="DkGamePhotos\firstStagefinal.png" />
+    <Content Include="DkGamePhotos\firstStagepart1.jpg" />
+    <Content Include="DkGamePhotos\firstStagepart2.jpg" />
+    <Content Include="DkGamePhotos\firstStagepart3.jpg" />
+    <Content Include="DkGamePhotos\firstStagepart4.jpg" />
+    <Content Include="DkGamePhotos\firstStagepart5.jpg" />
+    <Content Include="DkGamePhotos\firstStagepart6.jpg" />
+    <Content Include="DkGamePhotos\firstStagepart7.jpg" />
+    <Content Include="DkGamePhotos\firstStagepart8.jpg" />
+    <Content Include="DkGamePhotos\ladder1.jpg" />
+    <Content Include="DkGamePhotos\ladder2.jpg" />
+    <Content Include="DkGamePhotos\platforme1.png" />
+    <Content Include="DkGamePhotos\platforme2.png.jpg" />
+    <Content Include="DkGamePhotos\Princess.png" />
+    <Content Include="DragonsInfoPage.aspx" />
     <Content Include="ErrorPage.aspx" />
+    <Content Include="FantasticBeasts.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
+    <Content Include="KongGame.aspx" />
     <Content Include="LoginPage.aspx" />
+    <Content Include="LogOut.aspx" />
+    <Content Include="phaserActualStupidFile.js" />
     <Content Include="Pics\Dragons\General\Dragon2.jpg" />
     <Content Include="Pics\Dragons\General\Dragon3.jpg" />
     <Content Include="Pics\Dragons\General\Dragon4.jpg" />
@@ -162,6 +188,9 @@
     <Content Include="Pics\RegPics\SignUpPageImg1.png" />
     <Content Include="Pics\RegPics\SignUpPageImg2.jpg" />
     <Content Include="Pics\RegPics\Smileface1.jpg" />
+    <Content Include="Pong1v1.aspx" />
+    <Content Include="PongComp.aspx" />
+    <Content Include="PongHub.aspx" />
     <Content Include="RegisterTests.js" />
     <Content Include="RegistrationPage.aspx" />
     <Content Include="RegiStyler1.css" />
@@ -220,12 +249,26 @@
     <Compile Include="DelUserPage.aspx.designer.cs">
       <DependentUpon>DelUserPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DragonsInfoPage.aspx.cs">
+      <DependentUpon>DragonsInfoPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DragonsInfoPage.aspx.designer.cs">
+      <DependentUpon>DragonsInfoPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ErrorPage.aspx.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ErrorPage.aspx.designer.cs">
       <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FantasticBeasts.aspx.cs">
+      <DependentUpon>FantasticBeasts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FantasticBeasts.aspx.designer.cs">
+      <DependentUpon>FantasticBeasts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -237,12 +280,47 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="KongGame.aspx.cs">
+      <DependentUpon>KongGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KongGame.aspx.designer.cs">
+      <DependentUpon>KongGame.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LoginPage.aspx.designer.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOut.aspx.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOut.aspx.designer.cs">
+      <DependentUpon>LogOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pong1v1.aspx.cs">
+      <DependentUpon>Pong1v1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pong1v1.aspx.designer.cs">
+      <DependentUpon>Pong1v1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PongComp.aspx.cs">
+      <DependentUpon>PongComp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PongComp.aspx.designer.cs">
+      <DependentUpon>PongComp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PongHub.aspx.cs">
+      <DependentUpon>PongHub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PongHub.aspx.designer.cs">
+      <DependentUpon>PongHub.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterFormatron.Master.cs">
@@ -284,6 +362,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="RegisterFormatron.Master" />
+    <Content Include="PressStart2P-vaV7.ttf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -63,7 +63,7 @@ namespace WebProj
                 else
                 {
 
-                    string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\rnnoa\source\repos\WebProj\App_Data\database.mdf;Integrated Security=True";
+                    string connStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True";
                     SqlConnection SqlConn = new SqlConnection(connStr);
                     string cmdStr = string.Format("SELECT * FROM TbUsers WHERE (UserName = N'{0}')", Status);
                     SqlCommand SqlCmd = new SqlCommand(cmdStr, SqlConn);

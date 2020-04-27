@@ -12,8 +12,16 @@ namespace WebProj
 {
     public partial class DelUserPage : System.Web.UI.Page
     {
+        public string Status;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Status = (string)Session["User"];
+            if (Status == "guest")
+            {
+                Session["ErrorText"] = "You need to be LogedIn for this feture.אתה צריך להיות מחובר למשתמש בשביל זה";
+                Response.Redirect("./ErrorPage.aspx");
+            }
+
             if (Request.Form["Send"] != null)
             {
                 string ZeeUserName = Request.Form["UserNameDel"];
@@ -35,7 +43,7 @@ namespace WebProj
         {
             bool exists = false;
             //Sql databse connection string
-            string sqlConnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\rnnoa\source\repos\WebProj\App_Data\database.mdf;Integrated Security=True";
+            string sqlConnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True";
             SqlConnection SqlCon = new SqlConnection(sqlConnectionStr);
             string sqlCmdStr = string.Format("SELECT * FROM TbUsers WHERE (UserName = N'{0}' and PassWord = N'{1}')", user, pass);
             SqlCommand SqlCmd = new SqlCommand(sqlCmdStr, SqlCon);

@@ -32,7 +32,7 @@ namespace WebProj
                 if (isZeeUsernameUnique(ZeeUsername) && isZeeMailUnique(ZeeMail))
                 {
                     // Connection string taken from the server explorer
-                    string SQLconnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\rnnoa\source\repos\WebProj\App_Data\database.mdf;Integrated Security=True";
+                    string SQLconnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True";
                     // Insert query to insert the corresponding data from the post to the database
                     string SQLQuery = string.Format("INSERT INTO TbUsers " +
                         "(UserName, Mail, FirstName, LastName, PassWord, Birthdate, age, MobileNumber, Gender, Address) " +
@@ -58,7 +58,7 @@ namespace WebProj
         {
             bool exists = false;
             //Sql databse connection string
-            string sqlConnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\rnnoa\source\repos\WebProj\App_Data\database.mdf;Integrated Security=True";
+            string sqlConnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True";
             SqlConnection SqlCon = new SqlConnection(sqlConnectionStr);
             string sqlCmdStr = string.Format("SELECT * FROM TbUsers WHERE (UserName = N'{0}')", user);
             SqlCommand SqlCmd = new SqlCommand(sqlCmdStr, SqlCon);
@@ -74,7 +74,7 @@ namespace WebProj
         {
             bool exists = false;
             //Sql databse connection string
-            string sqlConnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\rnnoa\source\repos\WebProj\App_Data\database.mdf;Integrated Security=True";
+            string sqlConnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True";
             SqlConnection SqlCon = new SqlConnection(sqlConnectionStr);
             string sqlCmdStr = string.Format("SELECT * FROM TbUsers WHERE (Mail = N'{0}')", mail);
             SqlCommand SqlCmd = new SqlCommand(sqlCmdStr, SqlCon);

@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <form id="form1" runat="server" action="RegistrationPage.aspx" method="post" onsubmit="CheckStuff()">
         <h2>עדכון/שינוי פרטי משתמש</h2>
-        <p>...בבקשה תתחבר קודם, בשביל לעדכן דברים בפרטי המשתמש שלך</p>
+
         <div> <table class="table" id="UpdatingTable">
         <tr>
             <td>שם פרטי:</td>

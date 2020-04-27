@@ -9,9 +9,15 @@ namespace WebProj
 {
     public partial class SetGame : System.Web.UI.Page
     {
+        public string Status;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Status = (string)Session["User"];
+            if (Status == "guest")
+            {
+                Session["ErrorText"] = "You need to be LogedIn for this feture.אתה צריך להיות מחובר למשתמש בשביל זה";
+                Response.Redirect("./ErrorPage.aspx");
+            }
         }
     }
 }

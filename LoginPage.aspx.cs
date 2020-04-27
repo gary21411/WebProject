@@ -41,7 +41,7 @@ namespace WebProj
         {
             bool exists = false;
             //Sql databse connection string
-            string sqlConnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\rnnoa\source\repos\WebProj\App_Data\database.mdf;Integrated Security=True";
+            string sqlConnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True";
             SqlConnection SqlCon = new SqlConnection(sqlConnectionStr);
             string sqlCmdStr = string.Format("SELECT * FROM TbUsers WHERE (UserName = N'{0}' and PassWord = N'{1}')", user, pass);
             SqlCommand SqlCmd = new SqlCommand(sqlCmdStr, SqlCon);

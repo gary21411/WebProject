@@ -19,7 +19,7 @@ namespace WebProj
             {
                 TheBigTable += "<table cellpadding = \"5\" id=\"AllUsersInfoTable\" name=\"TabTab\"><tr class=\"stuff\"><th class=\"stuff2\">username</th><th class=\"stuff2\">mail</th><th class=\"stuff2\">firstname</th><th class=\"stuff2\">lastname</th><th class=\"stuff2\">password</th><th class=\"stuff2\">birthday</th><th class=\"stuff2\">age</th><th class=\"stuff2\">phonenumber</th><th class=\"stuff2\">gender</th><th class=\"stuff2\">address</th><th></th></tr>";
 
-                string conStr = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\rnnoa\source\repos\WebProj\App_Data\database.mdf; Integrated Security = True";
+                string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True";
                 string cmdStr = "SELECT  UserName, Mail, FirstName, LastName, PassWord, Birthdate, age, MobileNumber, Gender, Address  FROM TbUsers";
 
                 if (Request.Form["SendIt"] != null)
