@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 using System.Data;
 using System.Data.SqlClient;
@@ -36,24 +37,44 @@ namespace WebProj
                 string TheAddress = Request.Form["Address"];
                 string Status = (string)Session["User"];
 
-                // Connection string taken from the server explorer
-                string SQLconnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True";
-                // Insert query to insert the corresponding data from the post to the database
-                string SQLQuery = string.Format("UPDATE TbUsers Set" +
+                if (Session["IsAdmin"].ToString() == "Y")
+                {
+                    var xmlFile = XDocument.Load(MapPath("Admins.xml"));
+                    var userNode = xmlFile.Descendants("CD").FirstOrDefault(CD => CD.Element("UserName").Value == Status);
+                    userNode.SetElementValue("PassWord", UserPass);
+                    userNode.SetElementValue("FirstName", firstName);
+                    userNode.SetElementValue("LastName", lastName);
+                    userNode.SetElementValue("Mail", ZeeMail);
+                    userNode.SetElementValue("MobileNumber", MobileNumber);
+                    userNode.SetElementValue("Address", TheAddress);
+                    userNode.SetElementValue("Gender", TheGender);
+                    userNode.SetElementValue("Birthdate", Birthdate);
+                    userNode.SetElementValue("age", age);
+                    xmlFile.Save(MapPath("Admins.xml"));
+                    Response.Redirect("/Home.aspx");
+                }
+                else
+                {
+
+                    // Connection string taken from the server explorer
+                    string SQLconnectionStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True";
+                    // Insert query to insert the corresponding data from the post to the database
+                    string SQLQuery = string.Format("UPDATE TbUsers Set" +
                     " UserName = N'{0}', Mail = N'{1}', FirstName = N'{2}', LastName = N'{3}', PassWord = N'{4}', Birthdate = N'{5}', age = N'{6}', MobileNumber = N'{7}', Gender = N'{8}', Address = N'{9}'", ZeeUsername, ZeeMail, firstName, lastName, UserPass, Birthdate, age, MobileNumber, TheGender, TheAddress +
                     "WHERE (UserName = " + Status + ")");
-                // define the objects from the class SqlConnection and SqlCommand an pass as the parameter the variables previously defined
-                SqlConnection connectionObj = new SqlConnection(SQLconnectionStr);
-                SqlCommand queryObj = new SqlCommand(SQLQuery, connectionObj);
-                connectionObj.Open();
-                int rowsAffected = queryObj.ExecuteNonQuery();
-                connectionObj.Close();
-                if (rowsAffected == 1)
-                {
-                    Response.Redirect("./AfterRegistering.aspx");
+                    // define the objects from the class SqlConnection and SqlCommand an pass as the parameter the variables previously defined
+                    SqlConnection connectionObj = new SqlConnection(SQLconnectionStr);
+                    SqlCommand queryObj = new SqlCommand(SQLQuery, connectionObj);
+                    connectionObj.Open();
+                    int rowsAffected = queryObj.ExecuteNonQuery();
+                    connectionObj.Close();
+                    if (rowsAffected == 1)
+                    {
+                        Response.Redirect("./Home.aspx");
+                    }
                 }
             }
-            // else { ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "UnUniqueUserName()", true); }
+            
         }
     }
 }

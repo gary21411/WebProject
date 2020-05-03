@@ -61,7 +61,7 @@
             <option value="FantasticBeasts.aspx">Beasts Info</option>
             <option value="SetGame.aspx"> Set-Game</option>
             <option value="KongGame.aspx">Kong-Game</option>
-            <option value="PongHub.aspx">Pong-Game</option>
+            <option value="PongMenu.aspx">Pong-Game</option>
         </select>
         <button id="UserInfo" class="button UserInfo" onclick="location = 'UserInfoPage.aspx'"><%=Status %></button>
             <div>
